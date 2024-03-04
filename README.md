@@ -1,5 +1,7 @@
 # Gita GPT: Conversational Interaction with Lord Krishna
 
+![krishna-arjun-1m4m6as28186y5q9](https://github.com/POBOROJO/GITA-GPT/assets/94280580/b3b167ad-1149-442c-b817-c40652cdf0c3)
+
 ## Overview
 Gita GPT is a web application that facilitates conversational interactions with Lord Krishna, inspired by the wisdom and teachings found in the Bhagavad Gita. This project leverages the power of ReactJS for the frontend, Node.js and Express for the backend, and the Gemini API to provide personalized content tailored to your specific needs.
 
