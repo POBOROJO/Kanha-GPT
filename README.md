@@ -22,6 +22,14 @@ Gita GPT is a web application that facilitates conversational interactions with 
 - Styling: CSS modules and styled-components are used for styling, ensuring a consistent and visually appealing design.
 
 ## Getting Started
+    To use this project after cloning you need an API key 
+
+1. Goto this [link](https://aistudio.google.com/app/apikey) and get yourself a free API KEY.
+2. Click on `Create API key`.
+3. Make sure to Copy that key.
+4. Next step after you get the key go to your preferred IDE.
+5. Navigate to the`.env`file
+6. Replace this text ENTER_YOUR_API_KEY your API key.
 
 ### Prerequisites
     - Make sure you have NodeJs installed in your system.
