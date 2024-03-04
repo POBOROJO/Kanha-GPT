@@ -32,7 +32,7 @@ To use this project after cloning you need an API key
 3. Make sure to Copy that key.
 4. Next step after you get the key go to your preferred IDE.
 5. Navigate to the`server.js` file
-6. Replace this "YOUR_API_KEY" your API key "Enter within the inverted commas".
+6. Replace this "YOUR_API_KEY" with your API key make sure to "Enter within the inverted commas".
 
 ### Prerequisites:
 Make sure you have NodeJs installed in your system.
