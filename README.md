@@ -5,7 +5,7 @@
 ## Overview:
 Gita GPT is a web application designed to foster insightful dialogues with Lord Krishna, drawing inspiration from the profound teachings of the Bhagavad Gita. Through the fusion of modern technology and ancient wisdom, this project aims to provide users with a unique opportunity to engage with timeless principles that offer guidance and clarity in navigating life's complexities.
 
-## Why I Built This Project:
+## Why we Built This Project:
 The inspiration for Gita GPT came from a great admiration for the Bhagavad Gita's wisdom and a desire to make its teachings more accessible in today's fast-paced digital world. By combining cutting-edge AI technology with user-friendly interfaces, I envisioned a platform where people from all walks of life could have meaningful talks with Lord Krishna, acquiring vital insights and views on all facets of existence.
 
 ## Features:
