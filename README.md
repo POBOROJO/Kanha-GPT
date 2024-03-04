@@ -2,17 +2,20 @@
 
 ![krishna-arjun-1m4m6as28186y5q9](https://github.com/POBOROJO/GITA-GPT/assets/94280580/b3b167ad-1149-442c-b817-c40652cdf0c3)
 
-## Overview
-Gita GPT is a web application that facilitates conversational interactions with Lord Krishna, inspired by the wisdom and teachings found in the Bhagavad Gita. This project leverages the power of ReactJS for the frontend, Node.js and Express for the backend, and the Gemini API to provide personalized content tailored to your specific needs.
+## Overview:
+Gita GPT is a web application designed to foster insightful dialogues with Lord Krishna, drawing inspiration from the profound teachings of the Bhagavad Gita. Through the fusion of modern technology and ancient wisdom, this project aims to provide users with a unique opportunity to engage with timeless principles that offer guidance and clarity in navigating life's complexities.
 
-## Features
+## Why I Built This Project:
+The inspiration for Gita GPT came from a great admiration for the Bhagavad Gita's wisdom and a desire to make its teachings more accessible in today's fast-paced digital world. By combining cutting-edge AI technology with user-friendly interfaces, I envisioned a platform where people from all walks of life could have meaningful talks with Lord Krishna, acquiring vital insights and views on all facets of existence.
+
+## Features:
 - Conversational Interaction: Engage in meaningful dialogues with Lord Krishna, asking questions about faith, life, and well-being.
 
 - Personalized Content: Receive answers tailored to your specific needs, drawing from the Bhagavad Gita's pool of knowledge and wisdom.
 
 - Easy-to-Understand Answers: Get straightforward responses to your questions, making it accessible for everyone to explore the teachings  of the Bhagavad Gita.
 
-## Technologies Used
+## TechStack Used:
 - Frontend: ReactJS is used to build the user interface, providing a dynamic and responsive experience.
 
 - Backend: Node.js and Express are used to create the server-side application, handling requests and responses between the client and the  Gemini API.
@@ -21,40 +24,36 @@ Gita GPT is a web application that facilitates conversational interactions with 
 
 - Styling: CSS modules and styled-components are used for styling, ensuring a consistent and visually appealing design.
 
-## Getting Started
-    To use this project after cloning you need an API key 
+## Getting Started:
+To use this project after cloning you need an API key 
 
 1. Goto this [link](https://aistudio.google.com/app/apikey) and get yourself a free API KEY.
 2. Click on `Create API key`.
 3. Make sure to Copy that key.
 4. Next step after you get the key go to your preferred IDE.
-5. Navigate to the`.env`file
-6. Replace this text ENTER_YOUR_API_KEY your API key.
+5. Navigate to the`server.js` file
+6. Replace this "YOUR_API_KEY" your API key.
 
-### Prerequisites
-    - Make sure you have NodeJs installed in your system.
+### Prerequisites:
+Make sure you have NodeJs installed in your system.
 
-### Installation
-
+### Installation:
 1. Clone the repository: `git clone https://github.com/yourusername/gita-gpt.git`
 
 2. Navigate to the project directory: `cd gita-gpt`
 
 3. Install the backend dependencies: `npm install`
 
-4. To start the frontend application: `npm run dev`
+4. For the CLIENT SETUP: `npm run dev`
 
-5. To start the backend server : `npm start`
+5. For the SERVER SETUP: `npm start`
 
-## Usage
+## Usage:
 - Open your web browser and navigate to http://localhost:5173
 - Click on the "Enlighten Me!" button to receive a random question to get your answer from The Bhagavad Gita.
 - Type your question or response in the input field and press "Ask Kanha" to engage in a conversation with Lord Krishna.
 - The conversation history will be displayed, showing both your questions and Lord Krishna's responses.
 
-## Contributing
-Contributions are welcome! Please feel free to submit a pull request or open an issue if you have any suggestions or improvements.
-
-## Acknowledgments
+## Acknowledgments:
 - Special thanks to the Gemini API for providing the AI model that powers the conversational interactions.
 - Acknowledgment to the Bhagavad Gita for its profound wisdom and teachings.
