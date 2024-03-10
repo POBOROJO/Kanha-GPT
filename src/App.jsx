@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import "./App.css";
+import "./assets/styles/App.css";
 
 function App() {
 	const [value, setValue] = useState("");
@@ -127,7 +127,7 @@ function App() {
 						Ask Kanha{" "}
 						<img
 							className="flute"
-							src="./image/flute.png"
+							src="./assets/image/flute.png"
 							alt="flute"
 						/>
 					</button>
@@ -167,12 +167,12 @@ function App() {
 					>
 						<img
 							className="loading-images"
-							src="../flute.png"
+							src="./assets/image/flute.png"
 							alt="flute"
 						/>
 						<img
 							className="loading-images height-03"
-							src="../musical_notes.gif"
+							src="./assets/image/musical_notes.gif"
 							alt="musical notes"
 						/>
 					</div>
