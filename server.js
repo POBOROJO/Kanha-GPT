@@ -4,7 +4,7 @@ import { config as dotenvConfig } from "dotenv";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 dotenvConfig();
 
-const PORT = process.env.VITE_REACT_APP_PORT || 4000;
+const PORT = process.env.VITE_PORT || 4000;
 const app = express();
 
 app.use(cors());
@@ -13,7 +13,7 @@ app.use(express.json());
 // Calling config function from dotenv
 
 const genAI = new GoogleGenerativeAI(
-	process.env.VITE_REACT_APP_GEN_API_KEY || "YOUR_API_KEY"
+	process.env.VITE_GEN_API_KEY || "YOUR_API_KEY"
 );
 
 app.post("/krishna", async (req, res) => {
