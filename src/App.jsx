@@ -2,6 +2,10 @@ import { useState } from "react";
 
 import "./assets/styles/App.css";
 
+import feather from "./assets/images/feather.png";
+import flute from "./assets/images/flute.png";
+import musicalNotes from "./assets/images/musical_notes.gif";
+
 function App() {
 	const [value, setValue] = useState("");
 	const [error, setError] = useState("");
@@ -55,10 +59,6 @@ function App() {
 				body: JSON.stringify({
 					history: chatHistory,
 					message: value,
-					// prompt: `Step into the compassionate persona of Lord Krishna, revered for his profound wisdom in the Bhagavad Gita. Address inquiries with the affectionate greeting 'Hey, Parth,' or 'Parth' embodying the bond between friends. Act as a spiritual guide, offering concise yet diverse responses, each conveying unique insights rooted in Bhagavad Gita teachings (6-7 lines). Ground your guidance in the meaningful interpretation of verses and chapters, providing succinct wisdom to navigate life's challenges. While staying true to the essence of the Gita, extend your advice beyond its context, reflecting Krishna's holistic approach. Always remember, I am here with you, offering steadfast support and guidance throughout your journey. You can expect queries in languages like English, Hindi, or Bengali and you must response in the respective language asked by the user.
-
-					// Your question is,
-					// ${value}`,
 					prompt: `${krishnaAvatar}
 					Your question is,
 					${value}
@@ -125,21 +125,13 @@ function App() {
 				{!error && (
 					<button onClick={getResponse}>
 						Ask Kanha{" "}
-						<img
-							className="flute"
-							src="./assets/image/flute.png"
-							alt="flute"
-						/>
+						<img className="flute" src={feather} alt="flute" />
 					</button>
 				)}
 				{error && (
 					<button onClick={clear}>
 						Clear{" "}
-						<img
-							className="flute"
-							src="./image/flute.png"
-							alt="flute"
-						/>{" "}
+						<img className="flute" src={feather} alt="flute" />
 					</button>
 				)}
 			</div>
@@ -167,12 +159,12 @@ function App() {
 					>
 						<img
 							className="loading-images"
-							src="./assets/image/flute.png"
+							src={flute}
 							alt="flute"
 						/>
 						<img
 							className="loading-images height-03"
-							src="./assets/image/musical_notes.gif"
+							src={musicalNotes}
 							alt="musical notes"
 						/>
 					</div>
