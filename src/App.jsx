@@ -2,9 +2,10 @@ import { useState } from "react";
 
 import "./assets/styles/App.css";
 
-import feather from "./assets/images/feather.png";
-import flute from "./assets/images/flute.png";
-import musicalNotes from "./assets/images/musical_notes.gif";
+import Title from "./components/Title";
+import Enlighten from "./components/Enlighten";
+import Chatbar from "./components/Chatbar";
+import Chats from "./components/Chats";
 
 function App() {
 	const [value, setValue] = useState("");
@@ -32,21 +33,6 @@ function App() {
 	Maintain a compassionate and understanding tone, reflecting Krishna's unwavering support and care.
 	I am here to assist you on your path. Ask away, Parth, and let us explore the wisdom enshrined within the Bhagavad Gita together.
 	`;
-
-	const englightenOption = [
-		"Kanha, How can I develop my leadership skills and inspire others ?",
-		"What is the most important thing in life ?",
-		"What is the nature of suffering, and how can we overcome it ?",
-		"Meaning of Dharma ?",
-		"Kanha, how to find peace ?",
-		"Kanha, what is the meaning of life ?",
-		"Kanha, how can I be a better person ?",
-	];
-
-	const englighten = () => {
-		const randomValue = Math.floor(Math.random() * englightenOption.length);
-		setValue(englightenOption[randomValue]);
-	};
 
 	const getResponse = async () => {
 		if (!value) {
@@ -103,73 +89,18 @@ function App() {
 
 	return (
 		<div className="app">
-			<h1>Gita GPT 🦚</h1>
-			<p>
-				Hey Parth, what bothers you ?
-				<button
-					className="englighten"
-					onClick={englighten}
-					disabled={!chatHistory}
-				>
-					Enlighten Me !
-				</button>
-			</p>
+			<Title />
+			<Enlighten setValue={setValue} chatHistory={chatHistory} />
 
-			<div className="input-container">
-				<input
-					value={value}
-					placeholder="How to find peace ?"
-					onChange={(e) => setValue(e.target.value)}
-				/>
-
-				{!error && (
-					<button onClick={getResponse}>
-						Ask Kanha{" "}
-						<img className="flute" src={feather} alt="flute" />
-					</button>
-				)}
-				{error && (
-					<button onClick={clear}>
-						Clear{" "}
-						<img className="flute" src={feather} alt="flute" />
-					</button>
-				)}
-			</div>
+			<Chats chatHistory={chatHistory} isLoading={isLoading} />
 			{error && <p>{error}</p>}
-
-			<div className="search-result">
-				{chatHistory.map((chatItem, _index) => (
-					<div key={_index}>
-						<p className="answer">
-							{chatItem.role} :{" "}
-							<pre
-								dangerouslySetInnerHTML={{
-									__html: chatItem.parts
-										.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
-										.replace(/\*(.*?)\*/g, "<i>$1</i>"),
-								}}
-							/>
-						</p>
-					</div>
-				))}
-				{isLoading && (
-					<div
-						className="loading"
-						style={{ display: "flex", alignItems: "center" }}
-					>
-						<img
-							className="loading-images"
-							src={flute}
-							alt="flute"
-						/>
-						<img
-							className="loading-images height-03"
-							src={musicalNotes}
-							alt="musical notes"
-						/>
-					</div>
-				)}
-			</div>
+			<Chatbar
+				value={value}
+				setValue={setValue}
+				getResponse={getResponse}
+				error={error}
+				clear={clear}
+			/>
 		</div>
 	);
 }
