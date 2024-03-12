@@ -55,6 +55,10 @@ Make sure you have NodeJs installed in your system.
 - The conversation history will be displayed, showing both your questions and Lord Krishna's responses.
 
 ## Media:
+![Gita-GPT_image1](https://github.com/POBOROJO/GITA-GPT/assets/73418468/dea608bb-6e33-4840-9b3d-73db9fda12c0)
+![Gita-GPT_image2](https://github.com/POBOROJO/GITA-GPT/assets/73418468/46bea3ea-5035-42bd-87aa-59d5c82f0858)
+![Gita-GPT_image3](https://github.com/POBOROJO/GITA-GPT/assets/73418468/7a004127-39d5-472d-8ad9-52e1e4b8fa20)
+
 https://github.com/POBOROJO/GITA-GPT/assets/73418468/27377d06-a2ea-4611-b418-7a405f89f08b
 
 ## Acknowledgments:
