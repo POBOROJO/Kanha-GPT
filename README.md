@@ -54,6 +54,9 @@ Make sure you have NodeJs installed in your system.
 - Type your question or response in the input field and press "Ask Kanha" to engage in a conversation with Lord Krishna.
 - The conversation history will be displayed, showing both your questions and Lord Krishna's responses.
 
+## Media:
+https://github.com/POBOROJO/GITA-GPT/assets/73418468/27377d06-a2ea-4611-b418-7a405f89f08b
+
 ## Acknowledgments:
 - Special thanks to the Gemini API for providing the AI model that powers the conversational interactions.
 - Acknowledgment to the Bhagavad Gita for its profound wisdom and teachings.
