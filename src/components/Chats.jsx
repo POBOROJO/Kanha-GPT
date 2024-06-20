@@ -2,6 +2,8 @@ import React from "react";
 
 import Loading from "./Loading";
 
+import feather from "../assets/images/feather.png";
+
 const Chats = ({ chatHistory, isLoading }) => {
 	return (
 		<div className="search-result">
@@ -10,10 +12,7 @@ const Chats = ({ chatHistory, isLoading }) => {
 					<aside>
 						{chatItem.role === "model" ? (
 							<div>
-								<img
-									src="./src/assets/images/feather.png"
-									alt="feather"
-								/>
+								<img src={feather} alt="feather" />
 							</div>
 						) : (
 							<div>Y</div>
