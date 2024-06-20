@@ -123,3 +123,16 @@ body {
 	position: fixed;
 	top: 40%;
 }
+
+@media (width < 600px) {
+	.container {
+		width: 100%;
+		padding-inline: 0;
+	}
+	.title {
+		display: none;
+	}
+	/* .app {
+		justify-content: center;
+	} */
+}
