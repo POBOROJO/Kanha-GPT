@@ -1,0 +1,4 @@
+node_modules
+.env
+get_code_context.sh
+code_context.txt
