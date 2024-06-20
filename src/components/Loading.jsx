@@ -11,7 +11,7 @@ const Loading = () => {
 		>
 			<img className="loading-images" src={flute} alt="flute" />
 			<img
-				className="loading-images height-03"
+				className="loading-images"
 				src={musicalNotes}
 				alt="musical notes"
 			/>

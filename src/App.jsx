@@ -90,17 +90,19 @@ function App() {
 	return (
 		<div className="app">
 			<Title />
-			<Enlighten setValue={setValue} chatHistory={chatHistory} />
+			<div className="container">
+				<Chats chatHistory={chatHistory} isLoading={isLoading} />
+				{error && <p>{error}</p>}
+				<Enlighten setValue={setValue} chatHistory={chatHistory} />
 
-			<Chats chatHistory={chatHistory} isLoading={isLoading} />
-			{error && <p>{error}</p>}
-			<Chatbar
-				value={value}
-				setValue={setValue}
-				getResponse={getResponse}
-				error={error}
-				clear={clear}
-			/>
+				<Chatbar
+					value={value}
+					setValue={setValue}
+					getResponse={getResponse}
+					error={error}
+					clear={clear}
+				/>
+			</div>
 		</div>
 	);
 }

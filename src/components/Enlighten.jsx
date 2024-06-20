@@ -17,18 +17,12 @@ const Enlighten = ({ setValue, chatHistory }) => {
 	};
 
 	return (
-		<>
-			<p>
-				Hey Parth, what bothers you ?
-				<button
-					className="englighten"
-					onClick={englighten}
-					disabled={!chatHistory}
-				>
-					Enlighten Me !
-				</button>
-			</p>
-		</>
+		<div className="enlighten">
+			<p>Hey Parth, what bothers you ?</p>
+			<button onClick={englighten} disabled={!chatHistory}>
+				Enlighten Me !
+			</button>
+		</div>
 	);
 };
 
