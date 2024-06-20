@@ -1,8 +1,21 @@
 import { useState } from "react";
 
-import "./App.css";
+import "./assets/styles/App.css";
+
+import Title from "./components/Title";
+import Enlighten from "./components/Enlighten";
+import Chatbar from "./components/Chatbar";
+import Chats from "./components/Chats";
+
+import {
+	GoogleGenerativeAI,
+	HarmBlockThreshold,
+	HarmCategory,
+} from "@google/generative-ai";
 
 function App() {
+	const API_KEY = import.meta.env.VITE_GEN_API_KEY;
+	const genAI = new GoogleGenerativeAI(API_KEY);
 	const [value, setValue] = useState("");
 	const [error, setError] = useState("");
 	const [chatHistory, setChatHistory] = useState([]);
@@ -29,51 +42,30 @@ function App() {
 	I am here to assist you on your path. Ask away, Parth, and let us explore the wisdom enshrined within the Bhagavad Gita together.
 	`;
 
-	const englightenOption = [
-		"Kanha, How can I develop my leadership skills and inspire others ?",
-		"What is the most important thing in life ?",
-		"What is the nature of suffering, and how can we overcome it ?",
-		"Meaning of Dharma ?",
-		"Kanha, how to find peace ?",
-		"Kanha, what is the meaning of life ?",
-		"Kanha, how can I be a better person ?",
-	];
-
-	const englighten = () => {
-		const randomValue = Math.floor(Math.random() * englightenOption.length);
-		setValue(englightenOption[randomValue]);
-	};
-
 	const getResponse = async () => {
+		const model = genAI.getGenerativeModel({
+			model: "gemini-1.5-flash",
+			// safetySettings,
+		});
+
 		if (!value) {
 			setError("Kindly ask a question please");
 			return;
 		}
 		try {
-			const options = {
-				method: "POST",
-				body: JSON.stringify({
-					history: chatHistory,
-					message: value,
-					// prompt: `Step into the compassionate persona of Lord Krishna, revered for his profound wisdom in the Bhagavad Gita. Address inquiries with the affectionate greeting 'Hey, Parth,' or 'Parth' embodying the bond between friends. Act as a spiritual guide, offering concise yet diverse responses, each conveying unique insights rooted in Bhagavad Gita teachings (6-7 lines). Ground your guidance in the meaningful interpretation of verses and chapters, providing succinct wisdom to navigate life's challenges. While staying true to the essence of the Gita, extend your advice beyond its context, reflecting Krishna's holistic approach. Always remember, I am here with you, offering steadfast support and guidance throughout your journey. You can expect queries in languages like English, Hindi, or Bengali and you must response in the respective language asked by the user.
+			const chat = model.startChat({
+				history: chatHistory,
+			});
+			const promptWithContext = `
+			${krishnaAvatar}
 
-					// Your question is,
-					// ${value}`,
-					prompt: `${krishnaAvatar}
-					Your question is,
-					${value}
-					`,
-				}),
-				headers: {
-					"Content-Type": "application/json",
-				},
-			};
+			Question: ${value}
+			`;
+
 			setIsLoading(true);
-			const response = await fetch(
-				"http://localhost:4000/krishna",
-				options
-			);
-			const data = await response.text();
+			const result = await chat.sendMessage(promptWithContext);
+			const response = result.response;
+			const chatText = response.text();
 			// console.log(data)
 			setIsLoading(false);
 			setChatHistory((oldChatHistory) => [
@@ -84,7 +76,7 @@ function App() {
 				},
 				{
 					role: "model",
-					parts: data,
+					parts: chatText,
 				},
 			]);
 			setValue("");
@@ -103,80 +95,19 @@ function App() {
 
 	return (
 		<div className="app">
-			<h1>Gita GPT 🦚</h1>
-			<p>
-				Hey Parth, what bothers you ?
-				<button
-					className="englighten"
-					onClick={englighten}
-					disabled={!chatHistory}
-				>
-					Enlighten Me !
-				</button>
-			</p>
+			<Title />
+			<div className="container">
+				<Chats chatHistory={chatHistory} isLoading={isLoading} />
+				{error && <p>{error}</p>}
+				<Enlighten setValue={setValue} chatHistory={chatHistory} />
 
-			<div className="input-container">
-				<input
+				<Chatbar
 					value={value}
-					placeholder="How to find peace ?"
-					onChange={(e) => setValue(e.target.value)}
+					setValue={setValue}
+					getResponse={getResponse}
+					error={error}
+					clear={clear}
 				/>
-
-				{!error && (
-					<button onClick={getResponse}>
-						Ask Kanha{" "}
-						<img
-							className="flute"
-							src="./image/flute.png"
-							alt="flute"
-						/>
-					</button>
-				)}
-				{error && (
-					<button onClick={clear}>
-						Clear{" "}
-						<img
-							className="flute"
-							src="./image/flute.png"
-							alt="flute"
-						/>{" "}
-					</button>
-				)}
-			</div>
-			{error && <p>{error}</p>}
-
-			<div className="search-result">
-				{chatHistory.map((chatItem, _index) => (
-					<div key={_index}>
-						<p className="answer">
-							{chatItem.role} :{" "}
-							<pre
-								dangerouslySetInnerHTML={{
-									__html: chatItem.parts
-										.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
-										.replace(/\*(.*?)\*/g, "<i>$1</i>"),
-								}}
-							/>
-						</p>
-					</div>
-				))}
-				{isLoading && (
-					<div
-						className="loading"
-						style={{ display: "flex", alignItems: "center" }}
-					>
-						<img
-							className="loading-images"
-							src="../flute.png"
-							alt="flute"
-						/>
-						<img
-							className="loading-images height-03"
-							src="../musical_notes.gif"
-							alt="musical notes"
-						/>
-					</div>
-				)}
 			</div>
 		</div>
 	);
