@@ -7,7 +7,15 @@ import Enlighten from "./components/Enlighten";
 import Chatbar from "./components/Chatbar";
 import Chats from "./components/Chats";
 
+import {
+	GoogleGenerativeAI,
+	HarmBlockThreshold,
+	HarmCategory,
+} from "@google/generative-ai";
+
 function App() {
+	const API_KEY = import.meta.env.VITE_GEN_API_KEY;
+	const genAI = new GoogleGenerativeAI(API_KEY);
 	const [value, setValue] = useState("");
 	const [error, setError] = useState("");
 	const [chatHistory, setChatHistory] = useState([]);
@@ -35,31 +43,29 @@ function App() {
 	`;
 
 	const getResponse = async () => {
+		const model = genAI.getGenerativeModel({
+			model: "gemini-1.5-flash",
+			// safetySettings,
+		});
+
 		if (!value) {
 			setError("Kindly ask a question please");
 			return;
 		}
 		try {
-			const options = {
-				method: "POST",
-				body: JSON.stringify({
-					history: chatHistory,
-					message: value,
-					prompt: `${krishnaAvatar}
-					Your question is,
-					${value}
-					`,
-				}),
-				headers: {
-					"Content-Type": "application/json",
-				},
-			};
+			const chat = model.startChat({
+				history: chatHistory,
+			});
+			const promptWithContext = `
+			${krishnaAvatar}
+
+			Question: ${value}
+			`;
+
 			setIsLoading(true);
-			const response = await fetch(
-				"http://localhost:4000/krishna",
-				options
-			);
-			const data = await response.text();
+			const result = await chat.sendMessage(promptWithContext);
+			const response = result.response;
+			const chatText = response.text();
 			// console.log(data)
 			setIsLoading(false);
 			setChatHistory((oldChatHistory) => [
@@ -70,7 +76,7 @@ function App() {
 				},
 				{
 					role: "model",
-					parts: data,
+					parts: chatText,
 				},
 			]);
 			setValue("");
