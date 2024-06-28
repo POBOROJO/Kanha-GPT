@@ -41,7 +41,6 @@ function App() {
 	Maintain a compassionate and understanding tone, reflecting Krishna's unwavering support and care.
 	I am here to assist you on your path. Ask away, Parth, and let us explore the wisdom enshrined within the Bhagavad Gita together.
 	`;
-
   const safetySettings = [
     {
       category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,

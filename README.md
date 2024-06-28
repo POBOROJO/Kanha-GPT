@@ -24,19 +24,6 @@ The inspiration for Gita GPT came from a great admiration for the Bhagavad Gita'
 
 - Styling: CSS modules and styled-components are used for styling, ensuring a consistent and visually appealing design.
 
-## Getting Started:
-To use this project after cloning you need an API key 
-
-1. Goto this [link](https://aistudio.google.com/app/apikey) and get yourself a free API KEY.
-2. Click on `Create API key`.
-3. Make sure to Copy that key.
-4. Next step after you get the key go to your preferred IDE.
-5. Navigate to the`server.js` file
-6. Replace this "YOUR_API_KEY" with your API key make sure to "Enter within the inverted commas".
-
-### Prerequisites:
-Make sure you have NodeJs installed in your system.
-
 ### Installation:
 1. Clone the repository: `git clone https://github.com/yourusername/gita-gpt.git`
 
@@ -44,9 +31,7 @@ Make sure you have NodeJs installed in your system.
 
 3. Install the backend dependencies: `npm install`
 
-4. For the CLIENT SETUP: `npm run dev`
-
-5. For the SERVER SETUP: `npm start`
+4. To run the project: `npm run dev`
 
 ## Usage:
 - Open your web browser and navigate to http://localhost:5173
