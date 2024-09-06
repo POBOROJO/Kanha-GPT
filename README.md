@@ -25,9 +25,9 @@ The inspiration for Kanha GPT came from a great admiration for the Bhagavad Gita
 - Styling: CSS modules and styled-components are used for styling, ensuring a consistent and visually appealing design.
 
 ### Installation:
-1. Clone the repository: `git clone https://github.com/yourusername/gita-gpt.git`
+1. Clone the repository: `git clone https://github.com/POBOROJO/Kanha-GPT.git`
 
-2. Navigate to the project directory: `cd gita-gpt`
+2. Navigate to the project directory: `cd Kanha-gpt`
 
 3. Install the backend dependencies: `npm install`
 
@@ -44,7 +44,7 @@ The inspiration for Kanha GPT came from a great admiration for the Bhagavad Gita
 ![Gita-GPT_image2](https://github.com/POBOROJO/GITA-GPT/assets/73418468/46bea3ea-5035-42bd-87aa-59d5c82f0858)
 ![Gita-GPT_image3](https://github.com/POBOROJO/GITA-GPT/assets/73418468/7a004127-39d5-472d-8ad9-52e1e4b8fa20)
 
-https://github.com/POBOROJO/GITA-GPT/assets/73418468/27377d06-a2ea-4611-b418-7a405f89f08b
+https://github.com/POBOROJO/Kanha-GPT/assets/73418468/27377d06-a2ea-4611-b418-7a405f89f08b
 
 ## Acknowledgments:
 - Special thanks to the Gemini API for providing the AI model that powers the conversational interactions.
